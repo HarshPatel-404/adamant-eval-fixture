@@ -1,0 +1,16 @@
+{
+  "name": "adamant-eval-fixture",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Evaluation repository for Adamant Phase 1 self-healing agent",
+  "type": "module",
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "node --experimental-strip-types --test tests/calculator.test.ts tests/config.test.ts tests/path-guard.test.ts",
+    "check": "npm run typecheck && npm run test"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "typescript": "^5.7.2"
+  }
+}
