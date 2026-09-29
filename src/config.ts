@@ -6,6 +6,8 @@ export interface ServerConfig {
   readonly host: string
   readonly port: number
   readonly timeoutMs: number
+  // BUG: Added required property without providing default value below (triggers TS2741)
+  readonly environment: 'development' | 'production' | 'test'
 }
 
 export const defaultServerConfig: ServerConfig = {
