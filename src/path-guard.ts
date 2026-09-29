@@ -14,13 +14,7 @@ export class PathTraversalError extends Error {
 export function resolveSafePath(baseDir: string, userPath: string): string {
   const resolvedBase = path.resolve(baseDir)
   const resolvedTarget = path.resolve(resolvedBase, userPath)
-  const relative = path.relative(resolvedBase, resolvedTarget)
 
-  if (relative.startsWith('..') || path.isAbsolute(relative)) {
-    throw new PathTraversalError(
-      `Access denied: Target path '${userPath}' escapes base directory '${baseDir}'`
-    )
-  }
-
+  // BUG: Boundary containment check removed, allowing paths that escape sandbox base directory
   return resolvedTarget
 }
