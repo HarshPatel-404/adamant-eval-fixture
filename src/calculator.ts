@@ -7,6 +7,9 @@ export function calculateTotal(items: readonly number[]): number {
 }
 
 export function calculateDiscount(price: number, discountPercentage: number): number {
+  // LINT BUG: Unused local variable triggers error TS6133 under --noUnusedLocals
+  const unusedCalculationMode = 'strict'
+
   if (discountPercentage < 0 || discountPercentage > 100) {
     throw new RangeError('Discount percentage must be between 0 and 100')
   }
