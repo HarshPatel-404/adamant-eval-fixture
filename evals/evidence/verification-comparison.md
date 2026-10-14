@@ -1,7 +1,7 @@
 # Verification Runs Determinism Comparison
 
-- **Run 1 Timestamp**: `2026-10-14T13:09:36.775Z`
-- **Run 2 Timestamp**: `2026-10-14T13:10:20.569Z`
+- **Run 1 Timestamp**: `2026-10-14T13:29:21.526Z`
+- **Run 2 Timestamp**: `2026-10-14T13:30:08.656Z`
 - **Baseline SHA**: `cd44b9e7c5c85ac9d9d287816d481748febaf638`
 - **Overall Determinism**: **100% Deterministic (All 8 fixtures match across runs)**
 
@@ -13,7 +13,7 @@
 | `lint-static` | `lint-static-failure` | `repair` | `verified` | `verified` | **IDENTICAL** |
 | `dependency-api` | `renamed-dependency-api-failure` | `repair` | `verified` | `verified` | **IDENTICAL** |
 | `logic-defect` | `straightforward-logic-defect` | `repair` | `verified` | `verified` | **IDENTICAL** |
-| `report-only` | `report-only-unsupported` | `report-only` | `verified` | `verified` | **IDENTICAL** |
+| `report-only` | `report-only-unsupported` | `report-only` | `runner-pending` | `runner-pending` | **IDENTICAL** |
 | `correct-give-up` | `underspecified-optimization-request` | `give-up` | `specification-only` | `specification-only` | **IDENTICAL** |
 
 ## Summary of Findings

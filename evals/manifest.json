@@ -90,7 +90,7 @@
       "evidence_files": [
         "evals/evidence/report-only.md"
       ],
-      "verification_status": "verified"
+      "verification_status": "runner-pending"
     },
     {
       "id": "correct-give-up",

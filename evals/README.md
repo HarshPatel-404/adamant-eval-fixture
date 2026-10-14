@@ -23,7 +23,7 @@ This directory contains the evaluation suite for the Adamant Phase 1 self-healin
 | `lint-static` | `lint-static-failure` | `repair` | `ed0dd9900af6cc9a5e51f67bc9307d07be493cbc` | `npm run lint` | `npm run check` | `verified` |
 | `dependency-api` | `renamed-dependency-api-failure` | `repair` | `485ec599d9764ef3e5b17cea56b6b780384816e1` | `npm run typecheck` | `npm run check` | `verified` |
 | `logic-defect` | `straightforward-logic-defect` | `repair` | `bab0e8a60ca28ec0f65c7d24b3dffd8f006771f6` | `npm test` | `npm run check` | `verified` |
-| `report-only` | `report-only-unsupported` | `report-only` | `ac2328e7cac52701628dc7423b4ba9400be39307` | `npm test` | None | `verified` |
+| `report-only` | `report-only-unsupported` | `report-only` | `ac2328e7cac52701628dc7423b4ba9400be39307` | `npm test` | None | `runner-pending` |
 | `correct-give-up` | `underspecified-optimization-request` | `give-up` | `fed0ce0aa5b28c9aa0b27dc5902f043a19f53925` | `node -e "process.stdout.write(fs.readFileSync('evals/cases/correct-give-up.md'))"` | None | `specification-only` |
 
 ---

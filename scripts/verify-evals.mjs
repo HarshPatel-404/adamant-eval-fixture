@@ -211,8 +211,8 @@ function verifyCase(caseItem, index) {
 
     // Step 3: Handle behavior-specific verification
     if (caseItem.expected_behavior === 'report-only') {
-      result.verification_status = 'verified';
-      result.details += ' | Confirmed external infrastructure dependency requiring report-only abstention.';
+      result.verification_status = 'runner-pending';
+      result.details += ' | Confirmed external infrastructure dependency; behavioral reporting verification is runner-pending.';
       return result;
     }
 
@@ -269,7 +269,11 @@ export function runSuite() {
     const res = verifyCase(caseItem, index);
     results.push(res);
 
-    if (res.verification_status === 'verified' || res.verification_status === 'specification-only') {
+    if (
+      res.verification_status === 'verified' ||
+      res.verification_status === 'specification-only' ||
+      res.verification_status === 'runner-pending'
+    ) {
       console.log(`OK [${res.verification_status}]`);
     } else {
       console.log(`FAILED [${res.verification_status}]`);
