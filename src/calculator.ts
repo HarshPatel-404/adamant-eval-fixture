@@ -3,7 +3,8 @@
  */
 
 export function calculateTotal(items: readonly number[]): number {
-  return items.reduce((sum, item) => sum + item, 0)
+  // LOGIC DEFECT: Initial accumulator is 1 instead of 0, skewing sums by +1
+  return items.reduce((sum, item) => sum + item, 1)
 }
 
 export function calculateDiscount(price: number, discountPercentage: number): number {
