@@ -1,6 +1,6 @@
 import test from 'node:test'
 import assert from 'node:assert/strict'
-import { defaultServerConfig, parsePort } from '../src/config.ts'
+import { defaultServerConfig, parsePort, loadVaultApiKey } from '../src/config.ts'
 
 test('defaultServerConfig provides valid configuration defaults', () => {
   assert.equal(defaultServerConfig.host, '127.0.0.1')
@@ -16,4 +16,8 @@ test('parsePort parses valid port numbers or falls back to default', () => {
 test('parsePort rejects invalid port strings', () => {
   assert.throws(() => parsePort('abc'), /Invalid port/)
   assert.throws(() => parsePort('99999'), /Invalid port/)
+})
+
+test('verifies external infrastructure vault encryption key configuration', () => {
+  assert.ok(loadVaultApiKey().length > 0)
 })

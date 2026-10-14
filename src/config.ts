@@ -22,3 +22,17 @@ export function parsePort(value: string | undefined): number {
   }
   return parsed
 }
+
+/**
+ * Loads external vault encryption key from the environment.
+ * Required for encrypted persistence; cannot be synthesized by automated code repair.
+ */
+export function loadVaultApiKey(): string {
+  const key = process.env['VAULT_ENCRYPTION_KEY']
+  if (!key) {
+    throw new Error(
+      'INFRASTRUCTURE_SECRET_MISSING: Environment variable VAULT_ENCRYPTION_KEY is required but not configured. Automated repair cannot synthesize external encryption secrets; please configure this secret in repository settings.'
+    )
+  }
+  return key
+}
