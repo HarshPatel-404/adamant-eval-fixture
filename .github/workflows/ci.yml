@@ -5,6 +5,7 @@ on:
     branches:
       - main
       - 'broken-*'
+      - 'feat/*'
   pull_request:
 
 permissions:
@@ -26,6 +27,10 @@ jobs:
 
       - name: Install dependencies
         run: npm install
+
+      - name: Validate eval manifest
+        if: hashFiles('scripts/validate-manifest.mjs') != ''
+        run: node scripts/validate-manifest.mjs
 
       - name: Typecheck
         run: npm run typecheck

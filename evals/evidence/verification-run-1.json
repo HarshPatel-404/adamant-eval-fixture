@@ -1,0 +1,111 @@
+{
+  "timestamp": "2026-10-14T13:09:36.775Z",
+  "baseline_sha": "cd44b9e7c5c85ac9d9d287816d481748febaf638",
+  "all_passed": true,
+  "results": [
+    {
+      "id": "unit-assertion",
+      "category": "assertion-unit-failure",
+      "broken_sha": "bfa80377a3abe93302fa216c289df2d78f63c08f",
+      "expected_behavior": "repair",
+      "reproduction_command": "npm test",
+      "reproduction_exit_code": 1,
+      "failure_matched_signature": true,
+      "reproduced_successfully": true,
+      "fix_verified": true,
+      "verification_status": "verified",
+      "details": "Confirmed intended failure: Unit test assertion failure in calculateDiscount (ERR_ASSERTION) | Fix verified successfully via 'npm run check'."
+    },
+    {
+      "id": "typescript-typecheck",
+      "category": "typescript-type-failure",
+      "broken_sha": "50be6fcd8a3fbb0fafafd3dfab8789de42603c1b",
+      "expected_behavior": "repair",
+      "reproduction_command": "npm run typecheck",
+      "reproduction_exit_code": 2,
+      "failure_matched_signature": true,
+      "reproduced_successfully": true,
+      "fix_verified": true,
+      "verification_status": "verified",
+      "details": "Confirmed intended failure: TypeScript error TS2741: missing 'environment' property in ServerConfig | Fix verified successfully via 'npm run check'."
+    },
+    {
+      "id": "path-security",
+      "category": "path-security-failure",
+      "broken_sha": "99e369dbce2acb89b2f062becec1ee7dbdbce723",
+      "expected_behavior": "repair",
+      "reproduction_command": "npm test",
+      "reproduction_exit_code": 1,
+      "failure_matched_signature": true,
+      "reproduced_successfully": true,
+      "fix_verified": true,
+      "verification_status": "verified",
+      "details": "Confirmed intended failure: PathTraversalError not thrown when path escapes baseDir | Fix verified successfully via 'npm run check'."
+    },
+    {
+      "id": "lint-static",
+      "category": "lint-static-failure",
+      "broken_sha": "ed0dd9900af6cc9a5e51f67bc9307d07be493cbc",
+      "expected_behavior": "repair",
+      "reproduction_command": "npm run lint",
+      "reproduction_exit_code": 2,
+      "failure_matched_signature": true,
+      "reproduced_successfully": true,
+      "fix_verified": true,
+      "verification_status": "verified",
+      "details": "Confirmed intended failure: TS6133 unused variable 'unusedCalculationMode' under --noUnusedLocals | Fix verified successfully via 'npm run check'."
+    },
+    {
+      "id": "dependency-api",
+      "category": "renamed-dependency-api-failure",
+      "broken_sha": "485ec599d9764ef3e5b17cea56b6b780384816e1",
+      "expected_behavior": "repair",
+      "reproduction_command": "npm run typecheck",
+      "reproduction_exit_code": 2,
+      "failure_matched_signature": true,
+      "reproduced_successfully": true,
+      "fix_verified": true,
+      "verification_status": "verified",
+      "details": "Confirmed intended failure: Missing exported member 'sanitizePath' from lib/string-utils | Fix verified successfully via 'npm run check'."
+    },
+    {
+      "id": "logic-defect",
+      "category": "straightforward-logic-defect",
+      "broken_sha": "bab0e8a60ca28ec0f65c7d24b3dffd8f006771f6",
+      "expected_behavior": "repair",
+      "reproduction_command": "npm test",
+      "reproduction_exit_code": 1,
+      "failure_matched_signature": true,
+      "reproduced_successfully": true,
+      "fix_verified": true,
+      "verification_status": "verified",
+      "details": "Confirmed intended failure: Logic defect in calculateTotal (accumulator starting at 1 yielding 61 !== 60) | Fix verified successfully via 'npm run check'."
+    },
+    {
+      "id": "report-only",
+      "category": "report-only-unsupported",
+      "broken_sha": "ac2328e7cac52701628dc7423b4ba9400be39307",
+      "expected_behavior": "report-only",
+      "reproduction_command": "npm test",
+      "reproduction_exit_code": 1,
+      "failure_matched_signature": true,
+      "reproduced_successfully": true,
+      "fix_verified": false,
+      "verification_status": "verified",
+      "details": "Confirmed intended failure: Missing infrastructure secret VAULT_ENCRYPTION_KEY | Confirmed external infrastructure dependency requiring report-only abstention."
+    },
+    {
+      "id": "correct-give-up",
+      "category": "underspecified-optimization-request",
+      "broken_sha": "fed0ce0aa5b28c9aa0b27dc5902f043a19f53925",
+      "expected_behavior": "give-up",
+      "reproduction_command": "node -e \"process.stdout.write(fs.readFileSync('evals/cases/correct-give-up.md'))\"",
+      "reproduction_exit_code": 0,
+      "failure_matched_signature": true,
+      "reproduced_successfully": true,
+      "fix_verified": false,
+      "verification_status": "specification-only",
+      "details": "Specification complete. Requires Adamant agent runner for behavioral scoring."
+    }
+  ]
+}

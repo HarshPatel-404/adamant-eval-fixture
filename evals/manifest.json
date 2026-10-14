@@ -1,0 +1,109 @@
+{
+  "schema_version": "1.0.0",
+  "repository": "HarshPatel-404/adamant-eval-fixture",
+  "baseline_sha": "cd44b9e7c5c85ac9d9d287816d481748febaf638",
+  "runtime": {
+    "node": "22.12.0",
+    "package_manager": "npm",
+    "lockfile_required": true
+  },
+  "cases": [
+    {
+      "id": "unit-assertion",
+      "category": "assertion-unit-failure",
+      "broken_sha": "bfa80377a3abe93302fa216c289df2d78f63c08f",
+      "reproduction_command": "npm test",
+      "expected_behavior": "repair",
+      "fix_verification_command": "npm run check",
+      "evidence_files": [
+        "evals/evidence/unit-assertion.md"
+      ],
+      "verification_status": "verified"
+    },
+    {
+      "id": "typescript-typecheck",
+      "category": "typescript-type-failure",
+      "broken_sha": "50be6fcd8a3fbb0fafafd3dfab8789de42603c1b",
+      "reproduction_command": "npm run typecheck",
+      "expected_behavior": "repair",
+      "fix_verification_command": "npm run check",
+      "evidence_files": [
+        "evals/evidence/typescript-typecheck.md"
+      ],
+      "verification_status": "verified"
+    },
+    {
+      "id": "path-security",
+      "category": "path-security-failure",
+      "broken_sha": "99e369dbce2acb89b2f062becec1ee7dbdbce723",
+      "reproduction_command": "npm test",
+      "expected_behavior": "repair",
+      "fix_verification_command": "npm run check",
+      "evidence_files": [
+        "evals/evidence/path-security.md"
+      ],
+      "verification_status": "verified"
+    },
+    {
+      "id": "lint-static",
+      "category": "lint-static-failure",
+      "broken_sha": "ed0dd9900af6cc9a5e51f67bc9307d07be493cbc",
+      "reproduction_command": "npm run lint",
+      "expected_behavior": "repair",
+      "fix_verification_command": "npm run check",
+      "evidence_files": [
+        "evals/evidence/lint-static.md"
+      ],
+      "verification_status": "verified"
+    },
+    {
+      "id": "dependency-api",
+      "category": "renamed-dependency-api-failure",
+      "broken_sha": "485ec599d9764ef3e5b17cea56b6b780384816e1",
+      "reproduction_command": "npm run typecheck",
+      "expected_behavior": "repair",
+      "fix_verification_command": "npm run check",
+      "evidence_files": [
+        "evals/evidence/dependency-api.md"
+      ],
+      "verification_status": "verified"
+    },
+    {
+      "id": "logic-defect",
+      "category": "straightforward-logic-defect",
+      "broken_sha": "bab0e8a60ca28ec0f65c7d24b3dffd8f006771f6",
+      "reproduction_command": "npm test",
+      "expected_behavior": "repair",
+      "fix_verification_command": "npm run check",
+      "evidence_files": [
+        "evals/evidence/logic-defect.md"
+      ],
+      "verification_status": "verified"
+    },
+    {
+      "id": "report-only",
+      "category": "report-only-unsupported",
+      "broken_sha": "ac2328e7cac52701628dc7423b4ba9400be39307",
+      "reproduction_command": "npm test",
+      "expected_behavior": "report-only",
+      "fix_verification_command": null,
+      "evidence_files": [
+        "evals/evidence/report-only.md"
+      ],
+      "verification_status": "verified"
+    },
+    {
+      "id": "correct-give-up",
+      "category": "underspecified-optimization-request",
+      "broken_sha": "fed0ce0aa5b28c9aa0b27dc5902f043a19f53925",
+      "reproduction_command": "node -e \"process.stdout.write(fs.readFileSync('evals/cases/correct-give-up.md'))\"",
+      "expected_behavior": "give-up",
+      "fix_verification_command": null,
+      "evidence_files": [
+        "evals/cases/correct-give-up.md",
+        "evals/evidence/correct-give-up.md"
+      ],
+      "verification_status": "specification-only"
+    }
+  ]
+}

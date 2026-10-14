@@ -4,13 +4,19 @@
   "private": true,
   "description": "Evaluation repository for Adamant Phase 1 self-healing agent",
   "type": "module",
+  "engines": {
+    "node": ">=22.12.0"
+  },
   "scripts": {
     "typecheck": "tsc --noEmit",
     "test": "node --experimental-strip-types --test tests/calculator.test.ts tests/config.test.ts tests/path-guard.test.ts",
-    "check": "npm run typecheck && npm run test"
+    "check": "npm run typecheck && npm run test",
+    "validate:manifest": "node scripts/validate-manifest.mjs",
+    "verify:evals": "node scripts/verify-evals.mjs",
+    "compare:evals": "node scripts/compare-eval-runs.mjs evals/evidence/verification-run-1.json evals/evidence/verification-run-2.json --output evals/evidence/verification-comparison.md"
   },
   "devDependencies": {
-    "@types/node": "^22.10.2",
-    "typescript": "^5.7.2"
+    "@types/node": "22.10.2",
+    "typescript": "5.7.2"
   }
 }
